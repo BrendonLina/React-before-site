@@ -31,7 +31,7 @@ function App() {
       <h2>Testando Eventos</h2>
       {/* eventos onclick com props */}
       <Evento numero="1"/>
-      <Evento numero="2"/>
+      {/* <Evento numero="2"/> */}
       <Form />
     </div>
   );
