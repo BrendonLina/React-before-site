@@ -4,6 +4,8 @@ import Pessoa from './components/Pessoa';
 import List from './components/List';
 import Evento from './components/Evento';
 import Form from './components/Form';
+import Condicional from './components/Condicional';
+import OutraLista from './components/OutraLista';
 
 function App() {
 
@@ -15,6 +17,8 @@ function App() {
   function soma(a,b){
     return a + b;
   }
+
+  const meusItens = ['React', 'Vue', 'Angular']
 
 
 
@@ -31,8 +35,12 @@ function App() {
       <h2>Testando Eventos</h2>
       {/* eventos onclick com props */}
       <Evento numero="1"/>
-      {/* <Evento numero="2"/> */}
       <Form />
+      <h2>EMAIL CADASTRADO</h2>
+        <Condicional />
+      <h2>Renderização de listas</h2> 
+      <OutraLista itens={meusItens}/> 
+      <OutraLista itens={[]}/>
     </div>
   );
 }
