@@ -1,5 +1,9 @@
 import './App.css';
 import {useState} from 'react';
+import { BrowserRouter as Router, Routes, Route, Link, BrowserRouter } from 'react-router-dom';
+import Home from './pages/Home';
+import Empresa from './pages/Empresa';
+import Contato from './pages/Contato';
 import HelloWorld from './components/HelloWorld';
 import Pessoa from './components/Pessoa';
 import List from './components/List';
@@ -9,6 +13,10 @@ import Condicional from './components/Condicional';
 import OutraLista from './components/OutraLista';
 import SeuNome from './components/SeuNome';
 import Saudacao from './components/Saudacao';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+
+
 
 function App() {
 
@@ -32,7 +40,31 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Olá, mundo !</h1>
+      
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route exact path="/" element={<Home/>}></Route>
+          <Route path="/empresa" element={<Empresa/>}></Route>
+          <Route path="/contato" element={<Contato/>}></Route>
+        </Routes>
+        <Footer />
+      </Router>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+      {/* <h1>Olá, mundo !</h1>
       <p>Seja Bem vindo ao React {newName} !</p>
       <p>Sua idade é {ano - nascimento}</p>
       <p>Soma {soma(25,23)}</p>
@@ -40,9 +72,9 @@ function App() {
       <HelloWorld />
       <Pessoa nome="Brendon" idade="25" profissao="Programador" foto="https://via.placeholder.com/150"/>
       <List />
-      <h2>Testando Eventos</h2>
+      <h2>Testando Eventos</h2> */}
       {/* eventos onclick com props */}
-      <Evento numero="1"/>
+      {/* <Evento numero="1"/>
       <Form />
       <h2>EMAIL CADASTRADO</h2>
         <Condicional />
@@ -51,7 +83,7 @@ function App() {
       <OutraLista itens={[]}/>
       <h2>State LIFT</h2>
       <SeuNome setarnome={setNome} />
-      <Saudacao nome={nome} />
+      <Saudacao nome={nome} /> */}
 
     </div>
   );
