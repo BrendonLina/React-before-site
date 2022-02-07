@@ -1,4 +1,5 @@
 import './App.css';
+import {useState} from 'react';
 import HelloWorld from './components/HelloWorld';
 import Pessoa from './components/Pessoa';
 import List from './components/List';
@@ -6,6 +7,8 @@ import Evento from './components/Evento';
 import Form from './components/Form';
 import Condicional from './components/Condicional';
 import OutraLista from './components/OutraLista';
+import SeuNome from './components/SeuNome';
+import Saudacao from './components/Saudacao';
 
 function App() {
 
@@ -17,8 +20,13 @@ function App() {
   function soma(a,b){
     return a + b;
   }
-
+  //OutraLista
   const meusItens = ['React', 'Vue', 'Angular']
+
+  //Seunome
+
+  const [nome,setNome] = useState()
+    
 
 
 
@@ -41,6 +49,10 @@ function App() {
       <h2>Renderização de listas</h2> 
       <OutraLista itens={meusItens}/> 
       <OutraLista itens={[]}/>
+      <h2>State LIFT</h2>
+      <SeuNome setarnome={setNome} />
+      <Saudacao nome={nome} />
+
     </div>
   );
 }
